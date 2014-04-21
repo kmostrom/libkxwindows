@@ -15,8 +15,8 @@ public:
 	WindowsApplication();
 	virtual ~WindowsApplication() {}
 
-	virtual void CreateWindows();
-	int MessageLoop();
+	virtual void CreateWindows(const char* title, int width, int height);
+	virtual int MessageLoop();
 
 	static LRESULT CALLBACK stWndProc(HWND windowHandle, UINT message, WPARAM wParam, LPARAM lParam);
 

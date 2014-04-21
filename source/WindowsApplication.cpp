@@ -12,7 +12,7 @@ WindowsApplication::WindowsApplication() { }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void WindowsApplication::CreateWindows()
+void WindowsApplication::CreateWindows(const char* title, int width, int height)
 {
 	INITCOMMONCONTROLSEX iccex =
 	{
@@ -40,13 +40,10 @@ void WindowsApplication::CreateWindows()
 
 	RegisterClassEx(&wc);
 
-	int width = 800;
-	int height = 600;
-
 	mWindow.CreateEx(
 		0,
 		className,
-		"kCommander",
+		title,
 		WS_OVERLAPPEDWINDOW | WS_VISIBLE,
 		Rect(0, 0, width, height),
 		NULL,
