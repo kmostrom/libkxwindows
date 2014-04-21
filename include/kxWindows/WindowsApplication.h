@@ -13,6 +13,7 @@ class WindowsApplication
 {
 public:
 	WindowsApplication();
+	virtual ~WindowsApplication() {}
 
 	virtual void CreateWindows();
 	int MessageLoop();
