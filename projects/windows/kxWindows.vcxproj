@@ -36,13 +36,6 @@
     <ClInclude Include="..\..\include\kxWindows\WindowClassEx.h" />
     <ClInclude Include="..\..\include\kxWindows\WindowsApplication.h" />
     <ClInclude Include="..\..\include\kxWindows\WindowUtil.h" />
-    <ClInclude Include="..\..\include\kxWindows\ZComboBox.h" />
-    <ClInclude Include="..\..\include\kxWindows\ZComboBoxEx.h" />
-    <ClInclude Include="..\..\include\kxWindows\ZReBar.h" />
-    <ClInclude Include="..\..\include\kxWindows\ZScrollBar.h" />
-    <ClInclude Include="..\..\include\kxWindows\ZStatic.h" />
-    <ClInclude Include="..\..\include\kxWindows\ZStatusBar.h" />
-    <ClInclude Include="..\..\include\kxWindows\ZToolTip.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{6299232E-BBDC-487C-BD1E-D4541BEB95E3}</ProjectGuid>

@@ -1,0 +1,44 @@
+
+/////////////////////////////////////////////////////////////////////////////
+
+#pragma once
+
+#ifndef _KM_WINDOWCLASS_H_
+#define _KM_WINDOWCLASS_H_
+
+#include <string>
+#include <windows.h>
+
+/////////////////////////////////////////////////////////////////////////////
+namespace km
+{
+	/////////////////////////////////////////////////////////////////////////////
+
+	class CWindowClassEx
+	{
+	public:
+
+		CWindowClassEx();
+		virtual ~CWindowClassEx() { }
+
+		void setupDefaults();
+		void setWindowProc(WNDPROC wndProc);
+
+		void registerClassEx();
+		void unregisterClass();
+
+		std::string getName() const;
+		HINSTANCE getInstance() const;
+
+		operator WNDCLASSEX* () { return &m_windowClassEx; }
+
+	private:
+
+		WNDCLASSEX m_windowClassEx;
+	};
+
+	/////////////////////////////////////////////////////////////////////////////
+}
+/////////////////////////////////////////////////////////////////////////////
+
+#endif
