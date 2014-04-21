@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\source\Rect.cpp" />
+    <ClCompile Include="..\..\source\UIWindow.cpp" />
+    <ClCompile Include="..\..\source\WindowsApplication.cpp" />
+    <ClCompile Include="..\..\source\UIButton.cpp" />
+    <ClCompile Include="..\..\source\UIFileListPane.cpp" />
+    <ClCompile Include="..\..\source\UIListBox.cpp" />
+    <ClCompile Include="..\..\source\UIListView.cpp" />
+    <ClCompile Include="..\..\source\FileSystem.cpp" />
+    <ClCompile Include="..\..\source\Path.cpp" />
+    <ClCompile Include="..\..\source\Win32Input.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\kxWindows\FileSystem.h" />
+    <ClInclude Include="..\..\include\kxWindows\Input.h" />
+    <ClInclude Include="..\..\include\kxWindows\Path.h" />
+    <ClInclude Include="..\..\include\kxWindows\Rect.h" />
+    <ClInclude Include="..\..\include\kxWindows\UIButton.h" />
+    <ClInclude Include="..\..\include\kxWindows\UIFileListPane.h" />
+    <ClInclude Include="..\..\include\kxWindows\UIListBox.h" />
+    <ClInclude Include="..\..\include\kxWindows\UIListView.h" />
+    <ClInclude Include="..\..\include\kxWindows\UIWindow.h" />
+    <ClInclude Include="..\..\include\kxWindows\Win32Input.h" />
+    <ClInclude Include="..\..\include\kxWindows\WindowClassEx.h" />
+    <ClInclude Include="..\..\include\kxWindows\WindowsApplication.h" />
+    <ClInclude Include="..\..\include\kxWindows\WindowUtil.h" />
+    <ClInclude Include="..\..\include\kxWindows\ZComboBox.h" />
+    <ClInclude Include="..\..\include\kxWindows\ZComboBoxEx.h" />
+    <ClInclude Include="..\..\include\kxWindows\ZReBar.h" />
+    <ClInclude Include="..\..\include\kxWindows\ZScrollBar.h" />
+    <ClInclude Include="..\..\include\kxWindows\ZStatic.h" />
+    <ClInclude Include="..\..\include\kxWindows\ZStatusBar.h" />
+    <ClInclude Include="..\..\include\kxWindows\ZToolTip.h" />
+  </ItemGroup>
+</Project>
