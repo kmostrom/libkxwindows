@@ -15,15 +15,12 @@ public:
 	WindowsApplication();
 	virtual ~WindowsApplication() {}
 
-	virtual void CreateWindows(const char* windowClassName, const char* title, int width, int height);
+	virtual void CreateWindows(const char* title, int width, int height) = 0;
 	virtual int MessageLoop();
 
 	static LRESULT CALLBACK stWndProc(HWND windowHandle, UINT message, WPARAM wParam, LPARAM lParam);
 
 	virtual LRESULT CALLBACK WndProc(HWND windowHandle, UINT message, WPARAM wParam, LPARAM lParam) = 0;
-
-protected:
-	UIWindow mWindow;
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
