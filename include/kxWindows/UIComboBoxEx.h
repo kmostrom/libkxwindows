@@ -1,33 +1,29 @@
-// H ///////////////////////////////////////////////////////////////////////////
-
-#ifndef _ZCOMBOBOXEX_H_
-#define _ZCOMBOBOXEX_H_
-
-#ifndef _WIN32_WINNT
-#define _WIN32_WINNT 0x0501
-#endif
-
-#include <windows.h>
-#include <commctrl.h>
-#include "ZBaseChildWindow.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-class ZComboBoxEx: public ZBaseChildWindow
+#pragma once
+
+#include <kxWindows/UIWindow.h>
+
+#include <windows.h>
+#include <commctrl.h>
+
+////////////////////////////////////////////////////////////////////////////////
+
+class UIComboBoxEx: public UIWindow
 {
 public:
-	ZComboBoxEx(HWND hWndParent)
-	: ZBaseChildWindow(hWndParent)
+	UIComboBoxEx(HWND hWndParent)
+		: UIWindow(hWndParent)
 	{
-		SetClassName( WC_COMBOBOXEX );
+		SetClassName(WC_COMBOBOXEX);
 	};
 
-	ZComboBoxEx(HWND hWndParent, UINT uiID)
-	: ZBaseChildWindow(hWndParent, uiID)
+	UIComboBoxEx(HWND hWndParent, UINT id)
+		: UIWindow(hWndParent)
 	{
+		mMenuHandle = (HMENU) id;
 	};
-
-	//
 
 	LRESULT DeleteItem(DWORD dwIndex);
 	LRESULT GetComboControl(void);
@@ -43,12 +39,6 @@ public:
 	LRESULT SetItem(PCOMBOBOXEXITEM pItem);
 	LRESULT SetUnicodeFormat(BOOL bUnicode);
 	LRESULT SetWindowTheme(LPWSTR pwszStr);
-
-	//
-
-protected:
 };
 
 ////////////////////////////////////////////////////////////////////////////////
-
-#endif

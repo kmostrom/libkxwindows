@@ -1,30 +1,28 @@
-// H ///////////////////////////////////////////////////////////////////////////
-
-#ifndef _ZSTATUSBAR_H_
-#define _ZSTATUSBAR_H_
-
-#ifndef _WIN32_WINNT
-#define _WIN32_WINNT 0x0501
-#endif
-
-#include <windows.h>
-#include <commctrl.h>
-#include "ZBaseChildWindow.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-class ZStatusBar: public ZBaseChildWindow
+#pragma once
+
+#include "UIWindow.h"
+
+#include <windows.h>
+#include <commctrl.h>
+
+////////////////////////////////////////////////////////////////////////////////
+
+class UIStatusBar: public UIWindow
 {
 public:
-	ZStatusBar(HWND hWndParent)
-	: ZBaseChildWindow(hWndParent)
+	UIStatusBar(HWND parentWindowHandle)
+		: UIWindow(parentWindowHandle)
 	{
-		SetClassName( STATUSCLASSNAME );
+		SetClassName(STATUSCLASSNAME);
 	};
 
-	ZStatusBar(HWND hWndParent, UINT uiID)
-	: ZBaseChildWindow(hWndParent, uiID)
+	UIStatusBar(HWND parentWindowHandle, UINT id)
+		: UIWindow(parentWindowHandle)
 	{
+		mMenuHandle = (HMENU) id;
 	};
 
 	LRESULT GetBorders(LPINT piBorders);
@@ -47,5 +45,3 @@ public:
 };
 
 ////////////////////////////////////////////////////////////////////////////////
-
-#endif

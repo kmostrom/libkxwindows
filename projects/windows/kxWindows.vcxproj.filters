@@ -5,32 +5,97 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="UIComponents">
+      <UniqueIdentifier>{7cfea174-0247-4c3d-aae2-a76f30e2bbc5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\source\Rect.cpp" />
-    <ClCompile Include="..\..\source\UIWindow.cpp" />
     <ClCompile Include="..\..\source\WindowsApplication.cpp" />
-    <ClCompile Include="..\..\source\UIButton.cpp" />
-    <ClCompile Include="..\..\source\UIFileListPane.cpp" />
-    <ClCompile Include="..\..\source\UIListBox.cpp" />
-    <ClCompile Include="..\..\source\UIListView.cpp" />
     <ClCompile Include="..\..\source\FileSystem.cpp" />
     <ClCompile Include="..\..\source\Path.cpp" />
     <ClCompile Include="..\..\source\Win32Input.cpp" />
+    <ClCompile Include="..\..\source\UIComboBox.cpp">
+      <Filter>UIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\UIComboBoxEx.cpp">
+      <Filter>UIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\UIReBar.cpp">
+      <Filter>UIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\UIScrollBar.cpp">
+      <Filter>UIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\UIStaticText.cpp">
+      <Filter>UIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\UIStatusBar.cpp">
+      <Filter>UIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\UIToolTip.cpp">
+      <Filter>UIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\UIButton.cpp">
+      <Filter>UIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\UIFileListPane.cpp">
+      <Filter>UIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\UIListBox.cpp">
+      <Filter>UIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\UIListView.cpp">
+      <Filter>UIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\UIWindow.cpp">
+      <Filter>UIComponents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\kxWindows\FileSystem.h" />
     <ClInclude Include="..\..\include\kxWindows\Input.h" />
     <ClInclude Include="..\..\include\kxWindows\Path.h" />
     <ClInclude Include="..\..\include\kxWindows\Rect.h" />
-    <ClInclude Include="..\..\include\kxWindows\UIButton.h" />
-    <ClInclude Include="..\..\include\kxWindows\UIFileListPane.h" />
-    <ClInclude Include="..\..\include\kxWindows\UIListBox.h" />
-    <ClInclude Include="..\..\include\kxWindows\UIListView.h" />
-    <ClInclude Include="..\..\include\kxWindows\UIWindow.h" />
     <ClInclude Include="..\..\include\kxWindows\Win32Input.h" />
     <ClInclude Include="..\..\include\kxWindows\WindowClassEx.h" />
     <ClInclude Include="..\..\include\kxWindows\WindowsApplication.h" />
     <ClInclude Include="..\..\include\kxWindows\WindowUtil.h" />
+    <ClInclude Include="..\..\include\kxWindows\UIComboBox.h">
+      <Filter>UIComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\kxWindows\UIComboBoxEx.h">
+      <Filter>UIComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\kxWindows\UIReBar.h">
+      <Filter>UIComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\kxWindows\UIScrollBar.h">
+      <Filter>UIComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\kxWindows\UIStaticText.h">
+      <Filter>UIComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\kxWindows\UIStatusBar.h">
+      <Filter>UIComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\kxWindows\UIToolTip.h">
+      <Filter>UIComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\kxWindows\UIButton.h">
+      <Filter>UIComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\kxWindows\UIFileListPane.h">
+      <Filter>UIComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\kxWindows\UIListBox.h">
+      <Filter>UIComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\kxWindows\UIListView.h">
+      <Filter>UIComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\kxWindows\UIWindow.h">
+      <Filter>UIComponents</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,33 +1,29 @@
-// H ///////////////////////////////////////////////////////////////////////////
-
-#ifndef _ZToolTip_H_
-#define _ZToolTip_H_
-
-#ifndef _WIN32_WINNT
-#define _WIN32_WINNT 0x0501
-#endif
-
-#include <windows.h>
-#include <commctrl.h>
-#include "ZBaseChildWindow.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-class ZToolTip: public ZBaseChildWindow
+#pragma once
+
+#include "UIWindow.h"
+
+#include <windows.h>
+#include <commctrl.h>
+
+////////////////////////////////////////////////////////////////////////////////
+
+class UIToolTip: public UIWindow
 {
 public:
-	ZToolTip(HWND hWndParent)
-	: ZBaseChildWindow(hWndParent)
+	UIToolTip(HWND parentWindowHandle)
+		: UIWindow(parentWindowHandle)
 	{
 		SetClassName( TOOLTIPS_CLASS );
 	};
 
-	ZToolTip(HWND hWndParent, UINT uiID)
-	: ZBaseChildWindow(hWndParent, uiID)
+	UIToolTip(HWND parentWindowHandle, UINT id)
+		: UIWindow(parentWindowHandle)
 	{
+		mMenuHandle = (HMENU) id;
 	};
-
-	//
 
 	LRESULT Activate(BOOL bActivate);
 	LRESULT AddTool(LPTOOLINFO pToolInfo);
@@ -63,12 +59,6 @@ public:
 	LRESULT Update(void);
 	LRESULT UpdateTipText(LPTOOLINFO pToolInfo);
 	LRESULT WindowFromPoint(LPPOINT pPoint);
-
-	//
-
-protected:
 };
 
 ////////////////////////////////////////////////////////////////////////////////
-
-#endif

@@ -1,32 +1,28 @@
 ////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _ZCOMBOBOX_H_
-#define _ZCOMBOBOX_H_
+#pragma once
 
-#ifndef _WIN32_WINNT
-#define _WIN32_WINNT 0x0501
-#endif
+#include "UIWindow.h"
 
 #include <windows.h>
 #include <commctrl.h>
-#include "ZBaseChildWindow.h"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-class ZComboBox: public ZBaseChildWindow
+class UIComboBox: public UIWindow
 {
 public:
-	ZComboBox(HWND hWndParent)
-		:	ZBaseChildWindow(hWndParent)
+	UIComboBox(HWND parentWindowHandle)
+		:	UIWindow(parentWindowHandle)
 	{
-		SetClassName( WC_COMBOBOX );
+		SetClassName(WC_COMBOBOX);
 	}
 
-	ZComboBox(HWND hWndParent, UINT uiID)
-		:ZBaseChildWindow(hWndParent, uiID)
-	{  };
-
-	//
+	UIComboBox(HWND parentWindowHandle, UINT id)
+		:UIWindow(parentWindowHandle)
+	{
+		mMenuHandle = (HMENU) id;
+	};
 
 	LRESULT AddString(TCHAR *szString);
 	LRESULT InsertString(long lIndex, TCHAR *szString);
@@ -69,18 +65,12 @@ public:
 	LRESULT SetTopIndex(long lIndex);
 	LRESULT ShowDropdown(BOOL bFlag);
 
-	//
-
 protected:
-
-	// The message handler for this window
 	LRESULT CALLBACK WinMsgHandler(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	{
 		switch (uMsg)
 		{
-
 			case WM_SIZE:
-	//			MessageBox(NULL, "WM_SIZE", "", MB_OK);
 			break;
 
 			default:
@@ -92,5 +82,3 @@ protected:
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-
-#endif

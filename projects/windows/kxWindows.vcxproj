@@ -11,9 +11,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\source\UIComboBox.cpp" />
+    <ClCompile Include="..\..\source\UIComboBoxEx.cpp" />
     <ClCompile Include="..\..\source\FileSystem.cpp" />
     <ClCompile Include="..\..\source\Path.cpp" />
+    <ClCompile Include="..\..\source\UIReBar.cpp" />
     <ClCompile Include="..\..\source\Rect.cpp" />
+    <ClCompile Include="..\..\source\UIScrollBar.cpp" />
+    <ClCompile Include="..\..\source\UIStaticText.cpp" />
+    <ClCompile Include="..\..\source\UIStatusBar.cpp" />
+    <ClCompile Include="..\..\source\UIToolTip.cpp" />
     <ClCompile Include="..\..\source\UIButton.cpp" />
     <ClCompile Include="..\..\source\UIFileListPane.cpp" />
     <ClCompile Include="..\..\source\UIListBox.cpp" />
@@ -23,10 +30,17 @@
     <ClCompile Include="..\..\source\WindowsApplication.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\include\kxWindows\UIComboBox.h" />
+    <ClInclude Include="..\..\include\kxWindows\UIComboBoxEx.h" />
     <ClInclude Include="..\..\include\kxWindows\FileSystem.h" />
     <ClInclude Include="..\..\include\kxWindows\Input.h" />
     <ClInclude Include="..\..\include\kxWindows\Path.h" />
+    <ClInclude Include="..\..\include\kxWindows\UIReBar.h" />
     <ClInclude Include="..\..\include\kxWindows\Rect.h" />
+    <ClInclude Include="..\..\include\kxWindows\UIScrollBar.h" />
+    <ClInclude Include="..\..\include\kxWindows\UIStaticText.h" />
+    <ClInclude Include="..\..\include\kxWindows\UIStatusBar.h" />
+    <ClInclude Include="..\..\include\kxWindows\UIToolTip.h" />
     <ClInclude Include="..\..\include\kxWindows\UIButton.h" />
     <ClInclude Include="..\..\include\kxWindows\UIFileListPane.h" />
     <ClInclude Include="..\..\include\kxWindows\UIListBox.h" />

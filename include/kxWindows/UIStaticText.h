@@ -1,35 +1,24 @@
 // H ///////////////////////////////////////////////////////////////////////////
 
-#ifndef _ZSTATIC_H_
-#define _ZSTATIC_H_
+#pragma once
+
+#include "UIWindow.h"
 
 #include <windows.h>
 #include <commctrl.h>
-#include "ZBaseChildWindow.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-class ZStatic: public ZBaseChildWindow
+class UIStaticText: public UIWindow
 {
 public:
-	ZStatic(HWND hWndParent)
-	: ZBaseChildWindow(hWndParent)
+	UIStaticText(HWND hWndParent)
+		: UIWindow()
 	{
-		SetClassName( WC_STATIC );
+		SetClassName(WC_STATIC);
 	};
 
-	ZStatic(HWND hWndParent, UINT uiID)
-	: ZBaseChildWindow(hWndParent, uiID)
-	{
-	};
-
-	//
-
-	//
-
-protected:
+	UIStaticText(HWND hWndParent, UINT uiID) { };
 };
 
 ////////////////////////////////////////////////////////////////////////////////
-
-#endif

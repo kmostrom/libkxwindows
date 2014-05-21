@@ -1,35 +1,30 @@
-// H ///////////////////////////////////////////////////////////////////////////
 
-#ifndef _ZReBar_H_
-#define _ZReBar_H_
+////////////////////////////////////////////////////////////////////////////////
 
-#ifndef _WIN32_WINNT
-#define _WIN32_WINNT 0x0501
-#endif
+#pragma once
+
+#include "UIWindow.h"
 
 #include <windows.h>
 #include <commctrl.h>
 #include <uxtheme.h>
-#include "ZBaseChildWindow.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-class ZReBar: public ZBaseChildWindow
+class UIReBar: public UIWindow
 {
 public:
-
-	// TODO: Default Constructor?, More extensive constructor Parent, Style, ExStyle, Dimensions, Vertical
-	ZReBar(HWND hWndParent)
-	: ZBaseChildWindow(hWndParent, REBARCLASSNAME)
+	UIReBar(HWND hWndParent)
+		: UIWindow(hWndParent)
 	{
+		SetClassName(REBARCLASSNAME);
 	};
 
-	ZReBar(HWND hWndParent, UINT uiID)
-	: ZBaseChildWindow(hWndParent, uiID)
-	{	// Used to take control over a rebar created from a dialog template
+	UIReBar(HWND hWndParent, UINT id)
+		: UIWindow(hWndParent)
+	{
+		mMenuHandle = (HMENU) id;
 	};
-
-	//
 
 	LRESULT BeginDrag(UINT uiBand, DWORD dwPos);
 	LRESULT DeleteBand(UINT uiBand);
@@ -73,14 +68,9 @@ public:
 
 	////
 
-	// Custom Member functions
 	DWORD	GetBandIndex(HWND hWnd);
 	LRESULT	SetBarInfo(HIMAGELIST himl);
-	LRESULT InsertBand(HBITMAP hbmBackground = 0, HWND hWndChild = 0, UINT cxMinChild = 0, UINT cyMinChild = 0, UINT cyChild = 0, UINT cyMaxChild = 0, UINT cyIntegral = 0, COLORREF clrFore = 0, COLORREF clrBack = 0, UINT cxHeader = 0, UINT cxIdeal = 0, UINT wID = 0, int iImage = 0, LPARAM lParam = 0, UINT cx = 0, UINT fStyle = 0, LPTSTR lpText = 0);
-
-protected:
+	LRESULT InsertBand(REBARBANDINFO& rebarBandInfo);
 };
 
 ////////////////////////////////////////////////////////////////////////////////
-
-#endif

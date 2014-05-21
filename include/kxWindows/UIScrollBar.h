@@ -1,39 +1,33 @@
-// H ///////////////////////////////////////////////////////////////////////////
-
-#ifndef _ZSCROLLBAR_H_
-#define _ZSCROLLBAR_H_
-
-#include <windows.h>
-#include <commctrl.h>
-#include "ZBaseChildWindow.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 
-class ZScrollBar: public ZBaseChildWindow
+#pragma once
+
+#include "UIWindow.h"
+
+#include <windows.h>
+#include <commctrl.h>
+
+////////////////////////////////////////////////////////////////////////////////
+
+class UIScrollBar: public UIWindow
 {
 public:
-	ZScrollBar(HWND hWndParent)
-	: ZBaseChildWindow(hWndParent)
+	UIScrollBar(HWND hWndParent)
+		: UIWindow(hWndParent)
 	{
-		SetClassName( WC_SCROLLBAR );
+		SetClassName(WC_SCROLLBAR);
 	};
 
-	ZScrollBar(HWND hWndParent, UINT uiID)
-	: ZBaseChildWindow(hWndParent, uiID)
+	UIScrollBar(HWND hWndParent, UINT id)
+		: UIWindow(hWndParent)
 	{
+		mMenuHandle = (HMENU) id;
 	};
-
-	//
 
 	BOOL SetScrollRange(int iBar, int iMinPos, int iMaxPos, BOOL bRedraw = TRUE);
 	int SetScrollPos(int iBar, int iPos, BOOL bRedraw = TRUE);
 	int SetScrollInfo(int iBarType, LPCSCROLLINFO pScrollInfo, BOOL bRedraw = TRUE);
-
-	//
-
-protected:
 };
 
 ////////////////////////////////////////////////////////////////////////////////
-
-#endif
