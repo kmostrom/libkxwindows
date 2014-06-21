@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\tests\gtest_main.cc" />
+    <ClCompile Include="..\..\tests\tests.cpp">
+      <Filter>tests</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="tests">
+      <UniqueIdentifier>{faa28880-cae8-4d54-8ee6-be05c75ab443}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

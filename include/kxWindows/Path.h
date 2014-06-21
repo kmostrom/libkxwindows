@@ -28,6 +28,11 @@ public:
 	static bool IsSlash(const char* c);
 	static bool IsInString(const char* string, char character);
 
+	void Set(std::string s);
+	std::string Join(std::string s);
+
+	std::string Pop();
+
 private:
 
 	std::string mPath;

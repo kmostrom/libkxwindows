@@ -18,6 +18,23 @@ CPath::~CPath() {}
 std::string CPath::Join(const std::string& path1, const std::string& path2)
 {
 	// if mPath is ""
+	// if path2 is ".."
+
+	if (path1 == "" && path2 == "")
+	{
+		return "";
+	}
+
+	if (path1 == "")
+	{
+		return path2;
+	}
+
+	if (path2 == "")
+	{
+		return path1;
+	}
+
 	std::string tmpStr = path1 + "\\" + path2;
 	tmpStr = CPath::ReplaceCharactersWith(tmpStr.c_str(), '\\', "/");
 	tmpStr = CPath::RemoveDuplicateCharacters(tmpStr.c_str(), '/');
@@ -162,6 +179,62 @@ bool CPath::IsSlash(const char* c)
 		return false;
 	}
 	return *c == '\\' || *c == '/';
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+std::string CPath::Join(std::string s)
+{
+	mPath = CPath::Join(mPath, s);
+	return mPath;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void CPath::Set(std::string s)
+{
+	// TODO: unsafe, should split on slash and add parts piece by piece using CPath::Join
+	mPath = s;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+std::string CPath::Pop()
+{
+	/*
+		test cases:
+
+		"/my/path"
+		"/my/path/"
+		"/"
+		""
+		"c:\\my\\path\\"
+		"c:\\my\\path"
+	*/
+
+	if (mPath == "/" || mPath == "\\\\")
+	{
+		return "";
+	}
+
+	// remove trailing slash
+	int length = mPath.length();
+
+	if (CPath::IsSlash(&mPath[length - 1]))
+	{
+		mPath = mPath.substr(0, length - 2);
+	}
+
+	int index = mPath.find_last_of("/");
+
+	if (index == std::string::npos)
+	{
+		index = mPath.find_last_of("\\");
+	}
+
+	std::string result = mPath.substr(index + 1);
+
+	return result;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
