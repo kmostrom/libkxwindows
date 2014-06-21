@@ -11,6 +11,9 @@ LRESULT CALLBACK UIFileListPane::WndProc(HWND windowHandle, UINT message, WPARAM
 {
 	switch (message)
 	{
+	case WM_LBUTTONDBLCLK:
+		PostMessage(mParentWindowHandle, EMessage::WM_FILEPANE_LBUTTONDBLK, (WPARAM) 0, (LPARAM) 0);
+		break;
 	case WM_KEYDOWN:
 		PostMessage(mParentWindowHandle, WM_KEYDOWN, (WPARAM) wParam, (LPARAM) 0);
 		break;

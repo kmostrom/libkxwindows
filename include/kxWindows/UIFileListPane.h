@@ -14,7 +14,8 @@ class UIFileListPane: public UIListBox
 public:
 	enum EMessage
 	{
-		WM_FILEPANE_GOTFOCUS = WM_USER // wParam == filePaneWindowHandle, lParam == 0
+		WM_FILEPANE_GOTFOCUS = WM_USER, // wParam == filePaneWindowHandle, lParam == 0
+		WM_FILEPANE_LBUTTONDBLK
 	};
 
 	virtual LRESULT CALLBACK WndProc(HWND windowHandle, UINT message, WPARAM wParam, LPARAM lParam);
