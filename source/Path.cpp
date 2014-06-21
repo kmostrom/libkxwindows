@@ -17,8 +17,10 @@ CPath::~CPath() {}
 
 std::string CPath::Join(const std::string& path1, const std::string& path2)
 {
-	// if mPath is ""
-	// if path2 is ".."
+	if (path2 == ".")
+	{
+		return path1;
+	}
 
 	if (path1 == "" && path2 == "")
 	{
@@ -38,6 +40,14 @@ std::string CPath::Join(const std::string& path1, const std::string& path2)
 	std::string tmpStr = path1 + "\\" + path2;
 	tmpStr = CPath::ReplaceCharactersWith(tmpStr.c_str(), '\\', "/");
 	tmpStr = CPath::RemoveDuplicateCharacters(tmpStr.c_str(), '/');
+
+	// if path2 is ".."
+	if (path2 == "..")
+	{
+		CPath path(path1.c_str());
+		path.Pop();
+		tmpStr = path.GetPath();
+	}
 
 	return tmpStr.c_str();
 }

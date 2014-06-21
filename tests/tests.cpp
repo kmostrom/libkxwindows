@@ -14,13 +14,25 @@ TEST(CPathTest, JoinTest)
 	{
 		CPath path("/usr/bin");
 		path.Join("");
-		ASSERT_EQ("/usr/bin/env", path.GetPath());
+		ASSERT_EQ("/usr/bin", path.GetPath());
 	}
 
 	{
 		CPath path;
 		path.Join("bin");
 		ASSERT_EQ("bin", path.GetPath());
+	}
+
+	{
+		CPath path("/my/path");
+		path.Join(".");
+		ASSERT_EQ("/my/path", path.GetPath());
+	}
+
+	{
+		CPath path("/my/path");
+		path.Join("..");
+		ASSERT_EQ("/my", path.GetPath());
 	}
 }
 
