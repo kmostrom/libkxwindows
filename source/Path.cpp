@@ -201,18 +201,7 @@ void CPath::Set(std::string s)
 
 std::string CPath::Pop()
 {
-	/*
-		test cases:
-
-		"/my/path"
-		"/my/path/"
-		"/"
-		""
-		"c:\\my\\path\\"
-		"c:\\my\\path"
-	*/
-
-	if (mPath == "/" || mPath == "\\\\")
+	if (mPath == "/" || mPath == "\\")
 	{
 		return "";
 	}
@@ -220,21 +209,39 @@ std::string CPath::Pop()
 	// remove trailing slash
 	int length = mPath.length();
 
-	if (CPath::IsSlash(&mPath[length - 1]))
+	if (length == 0)
 	{
-		mPath = mPath.substr(0, length - 2);
+		return "";
 	}
 
-	int index = mPath.find_last_of("/");
+	if (CPath::IsSlash(&mPath[length - 1]))
+	{
+		mPath = mPath.substr(0, length - 1);
+	}
 
+	// TODO: handle backslash
+
+	int index = mPath.find_last_of("/");
 	if (index == std::string::npos)
 	{
 		index = mPath.find_last_of("\\");
 	}
 
-	std::string result = mPath.substr(index + 1);
+	if (index == std::string::npos)
+	{
+		return "";
+	}
 
-	return result;
+	std::string poppedPart = mPath.substr(index + 1);
+
+	if (index == 0)
+	{
+		index++;
+	}
+
+	mPath = mPath.substr(0, index);
+
+	return poppedPart;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
