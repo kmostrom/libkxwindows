@@ -1,8 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="UIComponents">
+    <Filter Include="UIExtendedComponents">
       <UniqueIdentifier>{7cfea174-0247-4c3d-aae2-a76f30e2bbc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UIComponents">
+      <UniqueIdentifier>{d1107d75-961d-4d67-8aaa-5bc33bb86cff}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -10,46 +13,17 @@
     <ClCompile Include="..\..\source\WindowsApplication.cpp" />
     <ClCompile Include="..\..\source\FileSystem.cpp" />
     <ClCompile Include="..\..\source\Win32Input.cpp" />
-    <ClCompile Include="..\..\source\UIComboBox.cpp">
-      <Filter>UIComponents</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\UIComboBoxEx.cpp">
-      <Filter>UIComponents</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\UIReBar.cpp">
-      <Filter>UIComponents</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\UIScrollBar.cpp">
-      <Filter>UIComponents</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\UIStaticText.cpp">
-      <Filter>UIComponents</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\UIStatusBar.cpp">
-      <Filter>UIComponents</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\UIToolTip.cpp">
+    <ClCompile Include="..\..\source\Path.cpp" />
+    <ClCompile Include="..\..\source\UIAnimate.cpp">
       <Filter>UIComponents</Filter>
     </ClCompile>
     <ClCompile Include="..\..\source\UIButton.cpp">
       <Filter>UIComponents</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\source\UIFileListPane.cpp">
+    <ClCompile Include="..\..\source\UIComboBox.cpp">
       <Filter>UIComponents</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\source\UIListBox.cpp">
-      <Filter>UIComponents</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\UIListView.cpp">
-      <Filter>UIComponents</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\UIWindow.cpp">
-      <Filter>UIComponents</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\UIAnimate.cpp">
-      <Filter>UIComponents</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\UICoolBar.cpp">
+    <ClCompile Include="..\..\source\UIComboBoxEx.cpp">
       <Filter>UIComponents</Filter>
     </ClCompile>
     <ClCompile Include="..\..\source\UIDateTimePicker.cpp">
@@ -67,6 +41,12 @@
     <ClCompile Include="..\..\source\UIIPAddress.cpp">
       <Filter>UIComponents</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\source\UIListBox.cpp">
+      <Filter>UIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\UIListView.cpp">
+      <Filter>UIComponents</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\source\UIMonthCal.cpp">
       <Filter>UIComponents</Filter>
     </ClCompile>
@@ -79,6 +59,15 @@
     <ClCompile Include="..\..\source\UIRichEdit.cpp">
       <Filter>UIComponents</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\source\UIScrollBar.cpp">
+      <Filter>UIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\UIStaticText.cpp">
+      <Filter>UIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\UIStatusBar.cpp">
+      <Filter>UIComponents</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\source\UISysLink.cpp">
       <Filter>UIComponents</Filter>
     </ClCompile>
@@ -86,6 +75,9 @@
       <Filter>UIComponents</Filter>
     </ClCompile>
     <ClCompile Include="..\..\source\UIToolBar.cpp">
+      <Filter>UIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\UIToolTip.cpp">
       <Filter>UIComponents</Filter>
     </ClCompile>
     <ClCompile Include="..\..\source\UITrackBar.cpp">
@@ -97,7 +89,18 @@
     <ClCompile Include="..\..\source\UIUpDown.cpp">
       <Filter>UIComponents</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\source\Path.cpp" />
+    <ClCompile Include="..\..\source\UIWindow.cpp">
+      <Filter>UIComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\UIFileListPane.cpp">
+      <Filter>UIExtendedComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\UICoolBar.cpp">
+      <Filter>UIExtendedComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\UIReBar.cpp">
+      <Filter>UIExtendedComponents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\kxWindows\FileSystem.h" />
@@ -107,46 +110,17 @@
     <ClInclude Include="..\..\include\kxWindows\WindowClassEx.h" />
     <ClInclude Include="..\..\include\kxWindows\WindowsApplication.h" />
     <ClInclude Include="..\..\include\kxWindows\WindowUtil.h" />
-    <ClInclude Include="..\..\include\kxWindows\UIComboBox.h">
-      <Filter>UIComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\kxWindows\UIComboBoxEx.h">
-      <Filter>UIComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\kxWindows\UIReBar.h">
-      <Filter>UIComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\kxWindows\UIScrollBar.h">
-      <Filter>UIComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\kxWindows\UIStaticText.h">
-      <Filter>UIComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\kxWindows\UIStatusBar.h">
-      <Filter>UIComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\kxWindows\UIToolTip.h">
+    <ClInclude Include="..\..\include\kxWindows\Path.h" />
+    <ClInclude Include="..\..\include\kxWindows\UIAnimate.h">
       <Filter>UIComponents</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\kxWindows\UIButton.h">
       <Filter>UIComponents</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\kxWindows\UIFileListPane.h">
+    <ClInclude Include="..\..\include\kxWindows\UIComboBox.h">
       <Filter>UIComponents</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\kxWindows\UIListBox.h">
-      <Filter>UIComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\kxWindows\UIListView.h">
-      <Filter>UIComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\kxWindows\UIWindow.h">
-      <Filter>UIComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\kxWindows\UIAnimate.h">
-      <Filter>UIComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\kxWindows\UICoolBar.h">
+    <ClInclude Include="..\..\include\kxWindows\UIComboBoxEx.h">
       <Filter>UIComponents</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\kxWindows\UIDateTimePicker.h">
@@ -164,6 +138,12 @@
     <ClInclude Include="..\..\include\kxWindows\UIIPAddress.h">
       <Filter>UIComponents</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\kxWindows\UIListBox.h">
+      <Filter>UIComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\kxWindows\UIListView.h">
+      <Filter>UIComponents</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\kxWindows\UIMonthCal.h">
       <Filter>UIComponents</Filter>
     </ClInclude>
@@ -179,6 +159,15 @@
     <ClInclude Include="..\..\include\kxWindows\UIRichEdit.h">
       <Filter>UIComponents</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\kxWindows\UIScrollBar.h">
+      <Filter>UIComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\kxWindows\UIStaticText.h">
+      <Filter>UIComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\kxWindows\UIStatusBar.h">
+      <Filter>UIComponents</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\kxWindows\UISysLink.h">
       <Filter>UIComponents</Filter>
     </ClInclude>
@@ -186,6 +175,9 @@
       <Filter>UIComponents</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\kxWindows\UIToolBar.h">
+      <Filter>UIComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\kxWindows\UIToolTip.h">
       <Filter>UIComponents</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\kxWindows\UITrackBar.h">
@@ -197,6 +189,17 @@
     <ClInclude Include="..\..\include\kxWindows\UIUpDown.h">
       <Filter>UIComponents</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\kxWindows\Path.h" />
+    <ClInclude Include="..\..\include\kxWindows\UIWindow.h">
+      <Filter>UIComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\kxWindows\UIFileListPane.h">
+      <Filter>UIExtendedComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\kxWindows\UICoolBar.h">
+      <Filter>UIExtendedComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\kxWindows\UIReBar.h">
+      <Filter>UIExtendedComponents</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
