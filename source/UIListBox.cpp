@@ -341,7 +341,7 @@ std::string UIListBox::GetText(int index)
 
 	int selectionIndex = this->GetCurSel();
 
-	if (selectionIndex != -1)
+	if (selectionIndex != LB_ERR)
 	{
 		int length = this->GetTextLen(selectionIndex);
 
