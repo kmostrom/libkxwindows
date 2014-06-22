@@ -4,6 +4,7 @@
 
 #include <windows.h>
 #include <commctrl.h>
+#include <string>
 
 #include "UIWindow.h"
 
@@ -62,7 +63,11 @@ public:
 
 	HWND Create(HWND parentWindowHandle, UINT id);
 
-	virtual LRESULT CALLBACK WndProc( HWND windowHandle, UINT message, WPARAM wParam, LPARAM lParam);
+	virtual LRESULT CALLBACK WndProc(HWND windowHandle, UINT message, WPARAM wParam, LPARAM lParam);
+
+	//
+
+	std::string GetText(int index);
 };
 
 ////////////////////////////////////////////////////////////////////////////////
