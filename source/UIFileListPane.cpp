@@ -31,3 +31,16 @@ LRESULT CALLBACK UIFileListPane::WndProc(HWND windowHandle, UINT message, WPARAM
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void UIFileListPane::Populate(const std::vector<CFileSystem::SFileInfo>& files)
+{
+	int i=0;
+	for(std::vector<CFileSystem::SFileInfo>::const_iterator it=files.begin(); it != files.end(); ++it) {
+		CFileSystem::SFileInfo fileInfo = (*it);
+
+		const char* filename = fileInfo.filename.c_str();
+
+		InsertString(i, filename);
+		i++;
+	}
+}
