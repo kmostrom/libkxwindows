@@ -6,9 +6,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include "UIListBox.h"
-#include "Path.h"
 
-#include <kxWindows/FileSystem.h>
+// TODO: Cross-package dependency. Fixable?
+#include <filesystem/Path.h>
+#include <filesystem/FileSystem_Windows.h>
 
 #include <vector>
 #include <string>
@@ -26,7 +27,7 @@ public:
 
 	virtual LRESULT CALLBACK WndProc(HWND windowHandle, UINT message, WPARAM wParam, LPARAM lParam);
 
-	void Populate(const std::vector<CFileSystem::SFileInfo>& files);
+	void Populate(const std::vector<FileSystem_Windows::SFileInfo>& files);
 };
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -14,8 +14,6 @@
     <ClCompile Include="..\..\source\UIAnimate.cpp" />
     <ClCompile Include="..\..\source\UIComboBox.cpp" />
     <ClCompile Include="..\..\source\UIComboBoxEx.cpp" />
-    <ClCompile Include="..\..\source\FileSystem.cpp" />
-    <ClCompile Include="..\..\source\Path.cpp" />
     <ClCompile Include="..\..\source\UICoolBar.cpp" />
     <ClCompile Include="..\..\source\UIDateTimePicker.cpp" />
     <ClCompile Include="..\..\source\UIEdit.cpp" />
@@ -50,9 +48,7 @@
     <ClInclude Include="..\..\include\kxWindows\UIAnimate.h" />
     <ClInclude Include="..\..\include\kxWindows\UIComboBox.h" />
     <ClInclude Include="..\..\include\kxWindows\UIComboBoxEx.h" />
-    <ClInclude Include="..\..\include\kxWindows\FileSystem.h" />
     <ClInclude Include="..\..\include\kxWindows\Input.h" />
-    <ClInclude Include="..\..\include\kxWindows\Path.h" />
     <ClInclude Include="..\..\include\kxWindows\UICoolBar.h" />
     <ClInclude Include="..\..\include\kxWindows\UIDateTimePicker.h" />
     <ClInclude Include="..\..\include\kxWindows\UIEdit.h" />
@@ -116,7 +112,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>../../include;$(IncludePath)</IncludePath>
+    <IncludePath>../../include;../../../core/packages/filesystem/src/common/include;../../../core/packages/filesystem/src/windows/include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
