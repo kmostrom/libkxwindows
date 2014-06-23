@@ -32,11 +32,11 @@ LRESULT CALLBACK UIFileListPane::WndProc(HWND windowHandle, UINT message, WPARAM
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void UIFileListPane::Populate(const std::vector<FileSystem_Windows::SFileInfo>& files)
+void UIFileListPane::Populate(const std::vector<SFileInfo>& files)
 {
 	int i=0;
-	for(std::vector<FileSystem_Windows::SFileInfo>::const_iterator it=files.begin(); it != files.end(); ++it) {
-		FileSystem_Windows::SFileInfo fileInfo = (*it);
+	for(std::vector<SFileInfo>::const_iterator it=files.begin(); it != files.end(); ++it) {
+		SFileInfo fileInfo = (*it);
 
 		const char* filename = fileInfo.filename.c_str();
 

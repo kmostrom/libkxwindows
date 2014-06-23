@@ -27,7 +27,7 @@ public:
 
 	virtual LRESULT CALLBACK WndProc(HWND windowHandle, UINT message, WPARAM wParam, LPARAM lParam);
 
-	void Populate(const std::vector<FileSystem_Windows::SFileInfo>& files);
+	void Populate(const std::vector<SFileInfo>& files);
 };
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
