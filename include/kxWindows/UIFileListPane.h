@@ -22,7 +22,8 @@ public:
 	enum EMessage
 	{
 		WM_FILEPANE_GOTFOCUS = WM_USER, // wParam == filePaneWindowHandle, lParam == 0
-		WM_FILEPANE_LBUTTONDBLK
+		WM_FILEPANE_LBUTTONDBLK,
+		WM_FILEPANE_MOUSEWHEEL
 	};
 
 	virtual LRESULT CALLBACK WndProc(HWND windowHandle, UINT message, WPARAM wParam, LPARAM lParam);

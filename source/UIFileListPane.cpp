@@ -2,6 +2,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <windows.h>
+#include <windowsx.h>
 
 #include <kxWindows/UIFileListPane.h>
 
@@ -25,6 +26,11 @@ LRESULT CALLBACK UIFileListPane::WndProc(HWND windowHandle, UINT message, WPARAM
 	case WM_KILLFOCUS:
 		SetCurSel(-1);
 		break;
+	case WM_MOUSEWHEEL:
+		{
+			::PostMessage(mParentWindowHandle, EMessage::WM_FILEPANE_MOUSEWHEEL, wParam, lParam);
+		}
+		return 0;
 	}
 
 	return CallWindowProc(mOldWndProc, windowHandle, message, wParam, lParam);
