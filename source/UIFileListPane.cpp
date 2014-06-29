@@ -8,6 +8,15 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
+UIFileListPane::UIFileListPane()
+	: mSavedSelectionIndex(0) 
+{
+}
+
+UIFileListPane::~UIFileListPane() {}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
 LRESULT CALLBACK UIFileListPane::WndProc(HWND windowHandle, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	switch (message)
@@ -17,14 +26,18 @@ LRESULT CALLBACK UIFileListPane::WndProc(HWND windowHandle, UINT message, WPARAM
 		// LPARAM = 0 (not used)
 		PostMessage(mParentWindowHandle, EMessage::WM_FILEPANE_LBUTTONDBLK, (WPARAM) this, (LPARAM) 0);
 		break;
-	case WM_KEYDOWN:
-		PostMessage(mParentWindowHandle, WM_KEYDOWN, (WPARAM) wParam, (LPARAM) 0);
-		break;
 	case WM_SETFOCUS:
-		PostMessage(mParentWindowHandle, EMessage::WM_FILEPANE_GOTFOCUS, (WPARAM) windowHandle, (LPARAM) 0);
+		{
+			PostMessage(mParentWindowHandle, EMessage::WM_FILEPANE_GOTFOCUS, (WPARAM) windowHandle, (LPARAM) 0);
+			SetCurSel(mSavedSelectionIndex);
+		}
 		break;
 	case WM_KILLFOCUS:
-		SetCurSel(-1);
+		{
+			mSavedSelectionIndex = GetCurSel();
+			SetCurSel(-1);
+		}
+
 		break;
 	case WM_MOUSEWHEEL:
 		{
@@ -49,4 +62,7 @@ void UIFileListPane::Populate(const std::vector<SFileInfo>& files)
 		InsertString(i, filename);
 		i++;
 	}
+	SetCurSel(0);
 }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////

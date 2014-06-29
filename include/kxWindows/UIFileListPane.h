@@ -25,10 +25,16 @@ public:
 		WM_FILEPANE_LBUTTONDBLK,
 		WM_FILEPANE_MOUSEWHEEL
 	};
+public:
+	UIFileListPane();
+	virtual ~UIFileListPane();
 
 	virtual LRESULT CALLBACK WndProc(HWND windowHandle, UINT message, WPARAM wParam, LPARAM lParam);
 
 	void Populate(const std::vector<SFileInfo>& files);
+
+private:
+	int mSavedSelectionIndex;
 };
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
