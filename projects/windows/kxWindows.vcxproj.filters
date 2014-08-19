@@ -11,9 +11,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\source\Rect.cpp" />
     <ClCompile Include="..\..\source\WindowsApplication.cpp" />
-    <ClCompile Include="..\..\source\FileSystem.cpp" />
     <ClCompile Include="..\..\source\Win32Input.cpp" />
-    <ClCompile Include="..\..\source\Path.cpp" />
     <ClCompile Include="..\..\source\UIAnimate.cpp">
       <Filter>UIComponents</Filter>
     </ClCompile>
@@ -103,14 +101,12 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\kxWindows\FileSystem.h" />
     <ClInclude Include="..\..\include\kxWindows\Input.h" />
     <ClInclude Include="..\..\include\kxWindows\Rect.h" />
     <ClInclude Include="..\..\include\kxWindows\Win32Input.h" />
     <ClInclude Include="..\..\include\kxWindows\WindowClassEx.h" />
     <ClInclude Include="..\..\include\kxWindows\WindowsApplication.h" />
     <ClInclude Include="..\..\include\kxWindows\WindowUtil.h" />
-    <ClInclude Include="..\..\include\kxWindows\Path.h" />
     <ClInclude Include="..\..\include\kxWindows\UIAnimate.h">
       <Filter>UIComponents</Filter>
     </ClInclude>
