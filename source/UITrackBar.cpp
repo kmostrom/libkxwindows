@@ -263,6 +263,8 @@ void UITrackBar::Create(const char* text, HWND parentWindowHandle, UINT id)
 		GetModuleHandle(NULL),
 		NULL);
 
+	mParentWindowHandle = parentWindowHandle;
+
 	PostMessage(mWindowHandle, WM_SETFONT, (WPARAM) GetStockObject(ANSI_VAR_FONT), FALSE);
 
 	SubClass(UIWindow::stWndProc);
@@ -286,6 +288,9 @@ LRESULT CALLBACK UITrackBar::WndProc(HWND windowHandle, UINT message, WPARAM wPa
 
 		case WM_LBUTTONUP:
 			PostMessage(mParentWindowHandle, EMessage::WM_TRACKBAR_LBUTTONUP, (WPARAM) this, (LPARAM) 0);
+			break;
+
+		default:
 			break;
 	}
 
