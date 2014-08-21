@@ -17,12 +17,14 @@ public:
 	{
 		WM_TRACKBAR_LBUTTONDOWN = WM_USER, // wParam == filePaneWindowHandle, lParam == 0
 		WM_TRACKBAR_MOUSEMOVE,
-		WM_TRACKBAR_LBUTTONUP
+		WM_TRACKBAR_LBUTTONUP,
+		WM_TRACKBAR_CHANGED // wParam == trackBarHandle, lParam == 0
 	};
 
 public:
 	UITrackBar()
 		: UIWindow()
+		, mIsDraggingSlider(false)
 	{
 		SetClassName(TRACKBAR_CLASS);
 	};
@@ -66,6 +68,9 @@ public:
 	void Create(const char* text, HWND parentWindowHandle, UINT id);
 
 	virtual LRESULT CALLBACK WndProc(HWND windowHandle, UINT message, WPARAM wParam, LPARAM lParam);
+
+private:
+	bool mIsDraggingSlider;
 };
 
 ////////////////////////////////////////////////////////////////////////////////

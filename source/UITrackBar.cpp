@@ -280,14 +280,21 @@ LRESULT CALLBACK UITrackBar::WndProc(HWND windowHandle, UINT message, WPARAM wPa
 			// WPARAM = (UITrackBar*) source,
 			// LPARAM = 0 (not used)
 			PostMessage(mParentWindowHandle, EMessage::WM_TRACKBAR_LBUTTONDOWN, (WPARAM) this, (LPARAM) 0);
+			mIsDraggingSlider = true;
 			break;
 
 		case WM_MOUSEMOVE:
 			PostMessage(mParentWindowHandle, EMessage::WM_TRACKBAR_MOUSEMOVE, (WPARAM) this, (LPARAM) 0);
+			if (mIsDraggingSlider)
+			{
+				unsigned int position = GetPos();
+				PostMessage(mParentWindowHandle, EMessage::WM_TRACKBAR_CHANGED, (WPARAM) this, (LPARAM) position);
+			}
 			break;
 
 		case WM_LBUTTONUP:
 			PostMessage(mParentWindowHandle, EMessage::WM_TRACKBAR_LBUTTONUP, (WPARAM) this, (LPARAM) 0);
+			mIsDraggingSlider = false;
 			break;
 
 		default:
