@@ -13,16 +13,18 @@
 class UITrackBar: public UIWindow
 {
 public:
-	UITrackBar(HWND hWndParent)
-		: UIWindow(hWndParent)
+	enum EMessage
 	{
-		SetClassName(TRACKBAR_CLASS);
+		WM_TRACKBAR_LBUTTONDOWN = WM_USER, // wParam == filePaneWindowHandle, lParam == 0
+		WM_TRACKBAR_MOUSEMOVE,
+		WM_TRACKBAR_LBUTTONUP
 	};
 
-	UITrackBar(HWND hWndParent, UINT id)
-		: UIWindow(hWndParent)
+public:
+	UITrackBar()
+		: UIWindow()
 	{
-		mMenuHandle = (HMENU) id;
+		SetClassName(TRACKBAR_CLASS);
 	};
 
 	LRESULT ClearSel(BOOL bRedraw);
@@ -60,6 +62,10 @@ public:
 	LRESULT SetTipSide(int iLocation);
 	LRESULT SetToolTips(HWND hWndToolTips);
 	LRESULT SetUnicodeFormat(BOOL bUnicode);
+
+	void Create(const char* text, HWND parentWindowHandle, UINT id);
+
+	virtual LRESULT CALLBACK WndProc(HWND windowHandle, UINT message, WPARAM wParam, LPARAM lParam);
 };
 
 ////////////////////////////////////////////////////////////////////////////////

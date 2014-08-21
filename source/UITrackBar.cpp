@@ -249,3 +249,45 @@ LRESULT UITrackBar::SetUnicodeFormat(BOOL bUnicode)
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+
+void UITrackBar::Create(const char* text, HWND parentWindowHandle, UINT id)
+{
+	mWindowHandle = CreateWindowEx(
+		0,
+		TRACKBAR_CLASS,
+		text,
+		WS_VISIBLE | WS_CHILD,
+		0, 0, 120, 27,
+		parentWindowHandle,
+		(HMENU) id,
+		GetModuleHandle(NULL),
+		NULL);
+
+	PostMessage(mWindowHandle, WM_SETFONT, (WPARAM) GetStockObject(ANSI_VAR_FONT), FALSE);
+
+	SubClass(UIWindow::stWndProc);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+LRESULT CALLBACK UITrackBar::WndProc(HWND windowHandle, UINT message, WPARAM wParam, LPARAM lParam)
+{
+	switch (message)
+	{
+		case WM_LBUTTONDOWN: 
+			// WPARAM = (UITrackBar*) source,
+			// LPARAM = 0 (not used)
+			PostMessage(mParentWindowHandle, EMessage::WM_TRACKBAR_LBUTTONDOWN, (WPARAM) this, (LPARAM) 0);
+			break;
+
+		case WM_MOUSEMOVE:
+			PostMessage(mParentWindowHandle, EMessage::WM_TRACKBAR_MOUSEMOVE, (WPARAM) this, (LPARAM) 0);
+			break;
+
+		case WM_LBUTTONUP:
+			PostMessage(mParentWindowHandle, EMessage::WM_TRACKBAR_LBUTTONUP, (WPARAM) this, (LPARAM) 0);
+			break;
+	}
+
+	return CallWindowProc(mOldWndProc, windowHandle, message, wParam, lParam);
+}
