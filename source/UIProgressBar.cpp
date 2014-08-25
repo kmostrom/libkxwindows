@@ -81,3 +81,21 @@ LRESULT UIProgressBar::StepIt(void)
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+
+void UIProgressBar::Create(const char* text, HWND parentWindowHandle, UINT id)
+{
+	mWindowHandle = CreateWindowEx(
+		0,
+		PROGRESS_CLASS,
+		text,
+		WS_VISIBLE | WS_CHILD | PBS_SMOOTH,
+		0, 0, 120, 27,
+		parentWindowHandle,
+		(HMENU) id,
+		GetModuleHandle(NULL),
+		NULL);
+
+	PostMessage(mWindowHandle, WM_SETFONT, (WPARAM) GetStockObject(ANSI_VAR_FONT), FALSE);
+}
+
+////////////////////////////////////////////////////////////////////////////////
