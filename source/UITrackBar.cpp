@@ -159,9 +159,9 @@ LRESULT UITrackBar::SetPageSize(long lPageSize)
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-LRESULT UITrackBar::SetPos(BOOL bPosition, long lPosition)
+LRESULT UITrackBar::SetPos(long position, BOOL redraw)
 {
-	return ::SendMessage(mWindowHandle, TBM_SETPOS, (WPARAM) bPosition, (LPARAM) lPosition);
+	return ::SendMessage(mWindowHandle, TBM_SETPOS, (WPARAM) redraw, (LPARAM) position);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -51,7 +51,7 @@ public:
 	LRESULT SetBuddy(BOOL bLocationLeftOrUp, HWND hWndBuddy);
 	LRESULT SetLineSize(long lLineSize);
 	LRESULT SetPageSize(long lPageSize);
-	LRESULT SetPos(BOOL bPosition, long lPosition);
+	LRESULT SetPos(long position, BOOL redraw);
 	LRESULT SetRange(long lMin, long lMax, BOOL bRedraw);
 	LRESULT SetRangeMax(long lMax, BOOL bRedraw);
 	LRESULT SetRangeMin(long lMin, BOOL bRedraw);
