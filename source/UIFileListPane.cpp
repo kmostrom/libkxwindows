@@ -21,17 +21,35 @@ LRESULT CALLBACK UIFileListPane::WndProc(HWND windowHandle, UINT message, WPARAM
 {
 	switch (message)
 	{
+	case WM_LBUTTONDOWN:
+		{
+			int x = LOWORD(lParam);
+			int y = HIWORD(lParam);
+
+			LRESULT result = ItemFromPoint(x, y);
+			WORD itemIndex = LOWORD(result);
+			bool insideClientArea = HIWORD(result) == 0 ? true : false;
+			if (insideClientArea) {
+				SetCurSel(itemIndex);
+			} else { // click did not hit an item
+				mSavedSelectionIndex = this->GetCount() - 1;
+				SetCurSel(mSavedSelectionIndex);
+			}
+		} break;
+
 	case WM_LBUTTONDBLCLK: 
 		// WPARAM = (UIFileListPane*) source,
 		// LPARAM = 0 (not used)
 		PostMessage(mParentWindowHandle, EMessage::WM_FILEPANE_LBUTTONDBLK, (WPARAM) this, (LPARAM) 0);
 		break;
+
 	case WM_SETFOCUS:
 		{
 			PostMessage(mParentWindowHandle, EMessage::WM_FILEPANE_GOTFOCUS, (WPARAM) windowHandle, (LPARAM) 0);
 			SetCurSel(mSavedSelectionIndex);
 		}
 		break;
+
 	case WM_KILLFOCUS:
 		{
 			mSavedSelectionIndex = GetCurSel();
