@@ -12,13 +12,13 @@
 class UIStaticText: public UIWindow
 {
 public:
-	UIStaticText(HWND hWndParent)
+	UIStaticText()
 		: UIWindow()
 	{
 		SetClassName(WC_STATIC);
 	};
 
-	UIStaticText(HWND hWndParent, UINT uiID) { };
+	HWND Create(const char* text, HWND parentWindowHandle, UINT id);
 };
 
 ////////////////////////////////////////////////////////////////////////////////

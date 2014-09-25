@@ -4,6 +4,8 @@
 #include <kxWindows/Rect.h>
 
 #include <cassert>
+#include <cstdarg>
+#include <cstdio>
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -288,3 +290,17 @@ LRESULT CALLBACK UIWindow::WndProc(HWND windowHandle, UINT message, WPARAM wPara
 };
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int UIWindow::SetText(const char* format, ...)
+{
+	char buffer[512];
+	va_list aptr;
+
+	va_start(aptr, format);
+	int ret = vsnprintf(buffer, sizeof(buffer), format, aptr);
+	va_end(aptr);
+
+	SetWindowTextA(buffer);
+
+	return ret;
+}

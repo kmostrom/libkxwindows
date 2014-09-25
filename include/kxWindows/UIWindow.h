@@ -50,6 +50,8 @@ public:
 			void SubClass(WNDPROC wndProc);
 			void UnSubClass();
 
+			int SetText(const char* format, ...);
+
 protected:
 	HWND mWindowHandle;				
 	HWND mParentWindowHandle;
