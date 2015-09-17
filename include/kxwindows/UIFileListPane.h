@@ -1,0 +1,40 @@
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#pragma once
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include "UIListBox.h"
+
+// TODO: Cross-package dependency. Fixable?
+#include <filesystem/Path.h>
+#include <filesystem/FileSystem_Windows.h>
+
+#include <vector>
+#include <string>
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class UIFileListPane: public UIListBox
+{
+public:
+	enum EMessage
+	{
+		WM_FILEPANE_GOTFOCUS = WM_USER, // wParam == filePaneWindowHandle, lParam == 0
+		WM_FILEPANE_LBUTTONDBLK,
+		WM_FILEPANE_MOUSEWHEEL
+	};
+public:
+	UIFileListPane();
+	virtual ~UIFileListPane();
+
+	virtual LRESULT CALLBACK WndProc(HWND windowHandle, UINT message, WPARAM wParam, LPARAM lParam);
+
+	void Populate(const std::vector<SFileInfo>& files);
+
+private:
+	int mSavedSelectionIndex;
+};
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////

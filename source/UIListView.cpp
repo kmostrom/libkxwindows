@@ -1,0 +1,858 @@
+// CPP /////////////////////////////////////////////////////////////////////////
+
+#include <kxWindows/UIListView.h>
+
+////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::ApproximateViewRect(int iX, int iY, int iCount)
+{
+	return(::SendMessage(mWindowHandle, LVM_APPROXIMATEVIEWRECT, (WPARAM)iCount, (LPARAM)MAKELPARAM(iX, iY)));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::Arrange(int iCode)
+{
+	return(::SendMessage(mWindowHandle, LVM_ARRANGE, (WPARAM)iCode, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::CancelEditLabel(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_CANCELEDITLABEL, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::CreateDragImage(int iItem, LPPOINT pPointUpLeft)
+{
+	return(::SendMessage(mWindowHandle, LVM_CREATEDRAGIMAGE, (WPARAM)iItem, (LPARAM)pPointUpLeft));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::DeleteAllItems(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_DELETEALLITEMS, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::DeleteColumn(int iColumn)
+{
+	return(::SendMessage(mWindowHandle, LVM_DELETECOLUMN, (WPARAM)iColumn, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::DeleteItem(int iItem)
+{
+	return(::SendMessage(mWindowHandle, LVM_DELETEITEM, (WPARAM)iItem, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::EditLabel(int iItem)
+{
+	return(::SendMessage(mWindowHandle, LVM_EDITLABEL, (WPARAM)iItem, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::EnableGroupView(BOOL bEnable)
+{
+	return(::SendMessage(mWindowHandle, LVM_ENABLEGROUPVIEW, (WPARAM)bEnable, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::EnsureVisible(int iItem, BOOL bPartialOK)
+{
+	return(::SendMessage(mWindowHandle, LVM_ENSUREVISIBLE, (WPARAM)iItem, (LPARAM)bPartialOK));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetBkColor(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETBKCOLOR, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetBkImage(LPLVBKIMAGE pBkImage)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETBKIMAGE, (WPARAM)0, (LPARAM)pBkImage));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetCallbackMask(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETCALLBACKMASK, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetColumn(int iColumn, LPLVCOLUMN pColumn)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETCOLUMN, (WPARAM)iColumn, (LPARAM)pColumn));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetColumnOrderArray(int iCount, LPINT piArray)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETCOLUMNORDERARRAY, (WPARAM)iCount, (LPARAM)piArray));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetColumnWidth(int iColumn)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETCOLUMNWIDTH, (WPARAM)iColumn, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetCountPerPage(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETCOUNTPERPAGE, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetEditControl(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETEDITCONTROL, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetExtendedListViewStyle(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETEXTENDEDLISTVIEWSTYLE, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetGroupInfo(int iGroupID, struct tagLVGROUP *pGroup)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETGROUPINFO, (WPARAM)iGroupID, (LPARAM)pGroup));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetGroupMetrics(PLVGROUPMETRICS pGroupMetrics)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETGROUPMETRICS, (WPARAM)0, (LPARAM)pGroupMetrics));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetHeader(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETHEADER, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetHotCursor(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETHOTCURSOR, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetHotItem(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETHOTITEM, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetHoverTime(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETHOVERTIME, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetImageList(int iImageList)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETIMAGELIST, (WPARAM)iImageList, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetInsertMark(LPLVINSERTMARK pInsertMark)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETINSERTMARK, (WPARAM)0, (LPARAM)pInsertMark));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetInsertMarkColor(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETINSERTMARKCOLOR, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetISearchString(LPSTR pszString)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETISEARCHSTRING, (WPARAM)0, (LPARAM)pszString));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetItem(LPLVITEM pItem)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETITEM, (WPARAM)0, (LPARAM)pItem));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetItemCount(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETITEMCOUNT, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetItemPosition(int iItem, LPPOINT pPoint)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETITEMPOSITION, (WPARAM)iItem, (LPARAM)pPoint));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetItemRect(int iItem, LPRECT pRect)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETITEMRECT, (WPARAM)iItem, (LPARAM)pRect));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetItemSpacing(BOOL bSmall)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETITEMSPACING, (WPARAM)bSmall, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetItemState(int iItem, UINT uiMask)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETITEMSTATE, (WPARAM)iItem, (LPARAM)uiMask));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetItemText(int iItem, LPLVITEM pItem)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETITEMTEXT, (WPARAM)iItem, (LPARAM)pItem));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetNextItem(int iStart, UINT uiFlags)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETNEXTITEM, (WPARAM)iStart, (LPARAM)MAKELPARAM(uiFlags, 0)));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetNumberOfWorkAreas(LPUINT puiWorkAreas)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETNUMBEROFWORKAREAS, (WPARAM)0, (LPARAM)puiWorkAreas));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetOrigin(LPPOINT pOrigin)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETORIGIN, (WPARAM)0, (LPARAM)pOrigin));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetOutlineColor(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETOUTLINECOLOR, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetSelectedColumn(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETSELECTEDCOLUMN, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetSelectedCount(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETSELECTEDCOUNT, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetSelectionMark(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETSELECTIONMARK, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetStringWidth(LPCSTR pszString)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETSTRINGWIDTH, (WPARAM)0, (LPARAM)pszString));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetSubItemRect(int iItem, LPRECT pRect)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETSUBITEMRECT, (WPARAM)iItem, (LPARAM)pRect));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetTextBkColor(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETTEXTBKCOLOR, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetTextColor(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETTEXTCOLOR, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetTileInfo(PLVTILEINFO pTileInfo)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETTILEINFO, (WPARAM)0, (LPARAM)pTileInfo));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetTileViewInfo(PLVTILEVIEWINFO pTileViewInfo)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETTILEVIEWINFO, (WPARAM)0, (LPARAM)pTileViewInfo));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetToolTips(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETTOOLTIPS, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetTopIndex(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETTOPINDEX, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetUnicodeFormat(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETUNICODEFORMAT, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetView(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETVIEW, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetViewRect(LPRECT pRect)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETVIEWRECT, (WPARAM)0, (LPARAM)pRect));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::GetWorkAreas(int iWorkAreas, LPRECT pRect)
+{
+	return(::SendMessage(mWindowHandle, LVM_GETWORKAREAS, (WPARAM)iWorkAreas, (LPARAM)pRect));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::HasGroup(DWORD dwGroupID)
+{
+	return(::SendMessage(mWindowHandle, LVM_HASGROUP, (WPARAM)dwGroupID, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::HitTest(LPLVHITTESTINFO pHitTestInfo)
+{
+	return(::SendMessage(mWindowHandle, LVM_HITTEST, (WPARAM)0, (LPARAM)pHitTestInfo));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::InsertColumn(int iColumn, const LV_COLUMN *pColumn)
+{
+	return(::SendMessage(mWindowHandle, LVM_INSERTCOLUMN, (WPARAM)iColumn, (LPARAM)pColumn));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::InsertGroup(int iIndex, PLVGROUP pGroup)
+{
+	return(::SendMessage(mWindowHandle, LVM_INSERTGROUP, (WPARAM)iIndex, (LPARAM)pGroup));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::InsertGroupSorted(PLVINSERTGROUPSORTED pGroup, int iIndex)
+{
+	return(::SendMessage(mWindowHandle, LVM_INSERTGROUPSORTED, (WPARAM)pGroup, (LPARAM)iIndex));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::InsertItem(const LV_ITEM *pItem)
+{
+	return(::SendMessage(mWindowHandle, LVM_INSERTITEM, (WPARAM)0, (LPARAM)pItem));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::InsertMarkHitTest(LPPOINT pPoint, LPLVINSERTMARK pInsertMark)
+{
+	return(::SendMessage(mWindowHandle, LVM_INSERTMARKHITTEST, (WPARAM)pPoint, (LPARAM)pInsertMark));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::IsGroupViewEnabled(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_ISGROUPVIEWENABLED, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::MapIDToIndex(UINT uiID)
+{
+	return(::SendMessage(mWindowHandle, LVM_MAPIDTOINDEX, (WPARAM)uiID, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::MapIndexToID(UINT uiIndex)
+{
+	return(::SendMessage(mWindowHandle, LVM_MAPINDEXTOID, (WPARAM)uiIndex, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::MoveGroup(int iGroupID, int iDestinationIndex)
+{
+	return(::SendMessage(mWindowHandle, LVM_MOVEGROUP, (WPARAM)iGroupID, (LPARAM)iDestinationIndex));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::RedrawItems(int iFirst, int iLast)
+{
+	return(::SendMessage(mWindowHandle, LVM_REDRAWITEMS, (WPARAM)iFirst, (LPARAM)iLast));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::RemoveAllGroups(void)
+{
+	return(::SendMessage(mWindowHandle, LVM_REMOVEALLGROUPS, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::RemoveGroup(int iGroupID)
+{
+	return(::SendMessage(mWindowHandle, LVM_REMOVEGROUP, (WPARAM)iGroupID, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::Scroll(int iX, int iY)
+{
+	return(::SendMessage(mWindowHandle, LVM_SCROLL, (WPARAM)iX, (LPARAM)iY));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetBkColor(COLORREF clrBk)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETBKCOLOR, (WPARAM)0, (LPARAM)clrBk));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetBkImage(LPLVBKIMAGE pBkImage)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETBKIMAGE, (WPARAM)0, (LPARAM)pBkImage));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetCallbackMask(UINT uiMask)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETCALLBACKMASK, (WPARAM)uiMask, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetColumn(int iColumn, LPLVCOLUMN pColumn)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETCOLUMN, (WPARAM)iColumn, (LPARAM)pColumn));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetColumnOrderArray(int iCount, LPINT piArray)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETCOLUMNORDERARRAY, (WPARAM)iCount, (LPARAM)piArray));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetColumnWidth(int iColumn, int iX)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETCOLUMNWIDTH, (WPARAM)iColumn, (LPARAM)iX));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetExtendedListViewStyle(DWORD dwExStyle)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETEXTENDEDLISTVIEWSTYLE, (WPARAM)0, (LPARAM)dwExStyle));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetExtendedListViewStyleEx(DWORD dwExMask, DWORD dwExStyle)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETEXTENDEDLISTVIEWSTYLE, (WPARAM)dwExMask, (LPARAM)dwExStyle));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetGroupInfo(int iGroupID, PLVGROUP pGroup)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETGROUPINFO, (WPARAM)iGroupID, (LPARAM)pGroup));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetGroupMetrics(PLVGROUPMETRICS pGroupMetrics)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETGROUPMETRICS, (WPARAM)0, (LPARAM)pGroupMetrics));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetHotCursor(HCURSOR hCursor)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETHOTCURSOR, (WPARAM)0, (LPARAM)hCursor));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetHotItem(int iIndex)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETHOTITEM, (WPARAM)iIndex, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetHoverTime(DWORD dwHoverTime)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETHOVERTIME, (WPARAM)0, (LPARAM)dwHoverTime));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetIconSpacing(int iX, int iY)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETICONSPACING, (WPARAM)0, (LPARAM)MAKELPARAM(iX, iY)));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetImageList(HIMAGELIST hImageList, int iImageList)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETIMAGELIST, (WPARAM)iImageList, (LPARAM)hImageList));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetInfoTip(PLVSETINFOTIP pSetInfoTip)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETINFOTIP, (WPARAM)0, (LPARAM)pSetInfoTip));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetInsertMark(LPLVINSERTMARK pInsertMark)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETINSERTMARK, (WPARAM)0, (LPARAM)pInsertMark));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetInsertMarkColor(COLORREF clrColor)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETINSERTMARKCOLOR, (WPARAM)0, (LPARAM)clrColor));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetItem(const LPLVITEM pItem)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETITEM, (WPARAM)0, (LPARAM)pItem));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetItemCount(int iItemCount)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETITEMCOUNT, (WPARAM)iItemCount, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetItemCountEx(int iItemCount, DWORD dwFlags)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETITEMCOUNT, (WPARAM)iItemCount, (LPARAM)dwFlags));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetItemPosition(int iItem, int iX, int iY)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETITEMPOSITION, (WPARAM)iItem, (LPARAM)MAKELPARAM(iX, iY)));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetItemPosition32(int iItem, LPPOINT pPoint)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETITEMPOSITION32, (WPARAM)iItem, (LPARAM)pPoint));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetItemState(int iItem, LPLVITEM pItem)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETITEMSTATE, (WPARAM)iItem, (LPARAM)pItem));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetItemText(int iItem, LPLVITEM pItem)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETITEMTEXT, (WPARAM)iItem, (LPARAM)pItem));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetSelectedColumn(int iColumn)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETSELECTEDCOLUMN, (WPARAM)iColumn, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetSelectionMark(int iIndex)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETSELECTIONMARK, (WPARAM)0, (LPARAM)iIndex));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetTextBkColor(COLORREF clrTextBkColor)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETTEXTBKCOLOR, (WPARAM)0, (LPARAM)clrTextBkColor));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetTextColor(COLORREF clrTextColor)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETTEXTCOLOR, (WPARAM)0, (LPARAM)clrTextColor));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetTileInfo(PLVTILEINFO pTileInfo)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETTILEINFO, (WPARAM)0, (LPARAM)pTileInfo));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetTileViewInfo(PLVTILEVIEWINFO pTileViewInfo)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETTILEVIEWINFO, (WPARAM)0, (LPARAM)pTileViewInfo));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+/* Not Currently Supported by Windows
+LRESULT UIListView::SetTileWidth(PLVTILEINFO pTileInfo)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETTILEWIDTH, (WPARAM), (LPARAM)));
+}
+*/
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetToolTips(HWND hWndToolTip)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETTOOLTIPS, (WPARAM)0, (LPARAM)hWndToolTip));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetUnicodeFormat(BOOL bUnicode)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETUNICODEFORMAT, (WPARAM)bUnicode, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetView(DWORD dwView)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETVIEW, (WPARAM)dwView, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SetWorkAreas(int iWorkAreaCount, LPRECT pRect)
+{
+	return(::SendMessage(mWindowHandle, LVM_SETWORKAREAS, (WPARAM)iWorkAreaCount, (LPARAM)pRect));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SortGroups(PFNLVGROUPCOMPARE pfnGroupCompare, LPVOID pVoid)
+{
+	return(::SendMessage(mWindowHandle, LVM_SORTGROUPS, (WPARAM)pfnGroupCompare, (LPARAM)pVoid));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SortItems(PFNLVCOMPARE pfnCompare, LPARAM lParamSort)
+{
+	return(::SendMessage(mWindowHandle, LVM_SORTITEMS, (WPARAM)pfnCompare, (LPARAM)lParamSort));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SortItemsEx(PFNLVCOMPARE pfnCompare, LPARAM lParamSort)
+{
+	return(::SendMessage(mWindowHandle, LVM_SORTITEMSEX, (WPARAM)pfnCompare, (LPARAM)lParamSort));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::SubItemHitTest(LPLVHITTESTINFO pHitTestInfo)
+{
+	return(::SendMessage(mWindowHandle, LVM_SUBITEMHITTEST, (WPARAM)0, (LPARAM)pHitTestInfo));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListView::Update(int iItem)
+{
+	return(::SendMessage(mWindowHandle, LVM_UPDATE, (WPARAM)iItem, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+
+LRESULT UIListView::InsertColumn(PSTR pszText, int iWidth)
+{
+	LV_COLUMN Col;
+	Col.mask = LVCF_TEXT;
+	Col.pszText = pszText;
+	if(iWidth)
+	{
+		Col.mask |= LVCF_WIDTH;
+		Col.cx = iWidth;
+	}
+	return(InsertColumn(_dwCurrColumn++, &Col));
+}
+
+LRESULT UIListView::InsertItem(PSTR pszText, int iIndex)
+{
+	LV_ITEM Item;
+	Item.mask = LVIF_TEXT;
+	Item.iSubItem = 0;
+	Item.iItem = iIndex;
+	Item.pszText = pszText;
+
+	return(InsertItem(&Item));
+}
+
+*/
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+/*
+BOOL UIListView::InitListViewImageListsFromResource(DWORD dwResourceName)
+{
+	HICON hIconItem;
+	HIMAGELIST hLarge;
+	HIMAGELIST hSmall;
+
+	hLarge = ImageList_Create(GetSystemMetrics(SM_CXICON), GetSystemMetrics(SM_CYICON), ILC_MASK, 1, 1);
+	hSmall = ImageList_Create(GetSystemMetrics(SM_CXSMICON), GetSystemMetrics(SM_CYSMICON), ILC_MASK, 1, 1);
+
+	hIconItem = ::LoadIcon(m_hInstance, MAKEINTRESOURCE(dwResourceName));
+	ImageList_AddIcon(hLarge, hIconItem);
+	ImageList_AddIcon(hSmall, hIconItem);
+	::DestroyIcon(hIconItem);
+
+	ListView_SetImageList(mWindowHandle, hLarge, LVSIL_NORMAL);
+	ListView_SetImageList(mWindowHandle, hSmall, LVSIL_SMALL);
+	return(TRUE);
+}*/
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+HWND UIListView::Create(HWND parentWindowHandle, UINT id)
+{
+	mWindowHandle = CreateWindowEx(
+		0,
+		WC_LISTVIEW,
+		"",
+		WS_VISIBLE | WS_CHILD,
+		0, 0, 220, 127,
+		parentWindowHandle,
+		(HMENU) id,
+		GetModuleHandle(NULL),
+		NULL);
+
+	return mWindowHandle;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////

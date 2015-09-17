@@ -1,0 +1,365 @@
+// CPP /////////////////////////////////////////////////////////////////////////
+
+#include <kxWindows/UIListBox.h>
+#include <kxWindows/Rect.h>
+
+////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::AddFile(LPCTSTR pszFilename)
+{
+	return(::SendMessage(mWindowHandle, LB_ADDFILE, (WPARAM)0, (LPARAM)pszFilename));
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::AddString(LPCTSTR pszString)
+{
+	return(::SendMessage(mWindowHandle, LB_ADDSTRING, (WPARAM)0, (LPARAM)pszString));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::DeleteString(int iIndex)
+{
+	return(::SendMessage(mWindowHandle, LB_DELETESTRING, (WPARAM)iIndex, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::Dir(UINT uiAttrib, LPCTSTR pszPath)
+{
+	return(::SendMessage(mWindowHandle, LB_DIR, (WPARAM)uiAttrib, (LPARAM)pszPath));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::FindString(long lIndex, LPCTSTR pszString)
+{
+	return(::SendMessage(mWindowHandle, LB_FINDSTRING, (WPARAM)lIndex, (LPARAM)pszString));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::FindStringExact(long lIndex, LPCSTR pszString)
+{
+	return(::SendMessage(mWindowHandle, LB_FINDSTRINGEXACT, (WPARAM)lIndex, (LPARAM)pszString));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::GetAnchorIndex(void)
+{
+	return(::SendMessage(mWindowHandle, LB_GETANCHORINDEX, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::GetCaretIndex(void)
+{
+	return(::SendMessage(mWindowHandle, LB_GETCARETINDEX, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::GetCount(void)
+{
+	return(::SendMessage(mWindowHandle, LB_GETCOUNT, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::GetCurSel(void)
+{
+	return(::SendMessage(mWindowHandle, LB_GETCURSEL, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::GetHorizontalExtent(void)
+{
+	return(::SendMessage(mWindowHandle, LB_GETHORIZONTALEXTENT, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::GetItemData(long lIndex)
+{
+	return(::SendMessage(mWindowHandle, LB_GETITEMDATA, (WPARAM)lIndex, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::GetItemHeight(long lIndex)
+{
+	return(::SendMessage(mWindowHandle, LB_GETITEMHEIGHT, (WPARAM)lIndex, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::GetItemRect(long lIndex, LPRECT pRect)
+{
+	return(::SendMessage(mWindowHandle, LB_GETITEMRECT, (WPARAM)lIndex, (LPARAM)pRect));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::GetListboxInfo(void)
+{
+	return(::SendMessage(mWindowHandle, LB_GETLISTBOXINFO, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::GetLocale(void)
+{
+	return(::SendMessage(mWindowHandle, LB_GETLOCALE, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::GetSel(long lIndex)
+{
+	return(::SendMessage(mWindowHandle, LB_GETSEL, (WPARAM)lIndex, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::GetSelCount(void)
+{
+	return(::SendMessage(mWindowHandle, LB_GETSELCOUNT, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::GetSelItems(long lItemCount, LPUINT puiItems)
+{
+	return(::SendMessage(mWindowHandle, LB_GETSELITEMS, (WPARAM)lItemCount, (LPARAM)puiItems));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::GetText(long lIndex, LPCTSTR pszString)
+{
+	return(::SendMessage(mWindowHandle, LB_GETTEXT, (WPARAM)lIndex, (LPARAM)pszString));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::GetTextLen(long lIndex)
+{
+	return(::SendMessage(mWindowHandle, LB_GETTEXTLEN, (WPARAM)lIndex, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::GetTopIndex(void)
+{
+	return(::SendMessage(mWindowHandle, LB_GETTOPINDEX, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::InitStorage(long lItemCount, long lBytes)
+{
+	return(::SendMessage(mWindowHandle, LB_INITSTORAGE, (WPARAM)lItemCount, (LPARAM)lBytes));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::InsertString(long lIndex, LPCTSTR pszString)
+{
+	return(::SendMessage(mWindowHandle, LB_INSERTSTRING, (WPARAM)lIndex, (LPARAM)pszString));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::ItemFromPoint(long lX, long lY)
+{
+	return(::SendMessage(mWindowHandle, LB_ITEMFROMPOINT, (WPARAM)0, (LPARAM)MAKELPARAM(lX, lY)));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::ResetContent(void)
+{
+	return(::SendMessage(mWindowHandle, LB_RESETCONTENT, (WPARAM)0, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::SelectString(long lIndex, LPCTSTR pszString)
+{
+	return(::SendMessage(mWindowHandle, LB_SELECTSTRING, (WPARAM)lIndex, (LPARAM)pszString));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::SelItemRange(BOOL bSelect, long lStartIndex, long lEndIndex)
+{
+	return(::SendMessage(mWindowHandle, LB_SELITEMRANGE, (WPARAM)bSelect, (LPARAM)MAKELPARAM(lStartIndex, lEndIndex)));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::SelItemRangeEx(long lStartIndex, long lEndIndex)
+{
+	return(::SendMessage(mWindowHandle, LB_SELITEMRANGEEX, (WPARAM)lStartIndex, (LPARAM)lEndIndex));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::SetAnchorIndex(long lIndex)
+{
+	return(::SendMessage(mWindowHandle, LB_SETANCHORINDEX, (WPARAM)lIndex, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::SetCaretIndex(long lIndex, BOOL bScroll)
+{
+	return(::SendMessage(mWindowHandle, LB_SETCARETINDEX, (WPARAM)lIndex, (LPARAM)bScroll));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::SetColumnWidth(long lWidth)
+{
+	return(::SendMessage(mWindowHandle, LB_SETCOLUMNWIDTH, (WPARAM)lWidth, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::SetCount(long lCount)
+{
+	return(::SendMessage(mWindowHandle, LB_SETCOUNT, (WPARAM)lCount, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::SetCurSel(long lIndex)
+{
+	return(::SendMessage(mWindowHandle, LB_SETCURSEL, (WPARAM)lIndex, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::SetHorizontalExtent(long lExtent)
+{
+	return(::SendMessage(mWindowHandle, LB_SETHORIZONTALEXTENT, (WPARAM)lExtent, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::SetItemData(long lIndex, long lValue)
+{
+	return(::SendMessage(mWindowHandle, LB_SETITEMDATA, (WPARAM)lIndex, (LPARAM)lValue));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::SetItemHeight(long lIndex, long lHeight)
+{
+	return(::SendMessage(mWindowHandle, LB_SETITEMHEIGHT, (WPARAM)lIndex, (LPARAM)lHeight));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::SetLocale(WORD wLocale)
+{
+	return(::SendMessage(mWindowHandle, LB_SETLOCALE, (WPARAM)wLocale, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::SetSel(BOOL bSelect, long lIndex)
+{
+	return(::SendMessage(mWindowHandle, LB_SETSEL, (WPARAM)bSelect, (LPARAM)lIndex));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::SetTabStops(long lTabStopCount, LPUINT puiTabStops)
+{
+	return(::SendMessage(mWindowHandle, LB_SETTABSTOPS, (WPARAM)lTabStopCount, (LPARAM)puiTabStops));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT UIListBox::SetTopIndex(long lIndex)
+{
+	return(::SendMessage(mWindowHandle, LB_SETTOPINDEX, (WPARAM)lIndex, (LPARAM)0));
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+HWND UIListBox::Create(HWND parentWindowHandle, UINT id)
+{
+	mParentWindowHandle = parentWindowHandle;
+
+	mWindowHandle = CreateWindowEx(
+		WS_EX_CLIENTEDGE,
+		WC_LISTBOX,
+		"",
+		WS_VISIBLE | WS_CHILD | LBS_WANTKEYBOARDINPUT,
+		0, 0, 220, 127,
+		mParentWindowHandle,
+		(HMENU) id,
+		GetModuleHandle(NULL),
+		this);
+
+	SubClass(UIWindow::stWndProc);
+	/*
+	mWindowHandle = CreateEx(
+		WS_EX_CLIENTEDGE,
+		WC_LISTBOX,
+		"",
+		WS_VISIBLE | WS_CHILD | LBS_WANTKEYBOARDINPUT,
+		Rect(0, 0, 220, 127),
+		parentWindowHandle,
+		(HMENU) id,
+		this);
+	*/
+	PostMessage(mWindowHandle, WM_SETFONT, (WPARAM) GetStockObject(ANSI_VAR_FONT), FALSE);
+
+	return mWindowHandle;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+LRESULT CALLBACK UIListBox::WndProc(HWND windowHandle, UINT message, WPARAM wParam, LPARAM lParam)
+{
+	return CallWindowProc(mOldWndProc, windowHandle, message, wParam, lParam);
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+std::string UIListBox::GetText(int index)
+{
+	std::string text;
+
+	int selectionIndex = this->GetCurSel();
+
+	if (selectionIndex != LB_ERR)
+	{
+		int length = this->GetTextLen(selectionIndex);
+
+		if (length > 0)
+		{
+			char* buffer = new char[length + 1];
+
+			if (buffer)
+			{
+				this->GetText(selectionIndex, buffer);
+				text = std::string(buffer);
+
+				delete buffer;
+			}
+		}
+	}
+
+	return text;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////

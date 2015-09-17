@@ -1,0 +1,29 @@
+
+////////////////////////////////////////////////////////////////////////////////
+
+#pragma once
+
+#include "UIWindow.h"
+
+#include <windows.h>
+#include <commctrl.h>
+
+////////////////////////////////////////////////////////////////////////////////
+
+class UINativeFont: public UIWindow
+{
+public:
+	UINativeFont(HWND hWndParent)
+		: UIWindow(hWndParent)
+	{
+		// SetClassName(WC_NATIVEFONT);
+	};
+
+	UINativeFont(HWND hWndParent, UINT id)
+		: UIWindow(hWndParent)
+	{
+		mMenuHandle = (HMENU) id;
+	};
+};
+
+////////////////////////////////////////////////////////////////////////////////
