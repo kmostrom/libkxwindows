@@ -34,7 +34,6 @@
     <ClCompile Include="..\..\source\UIToolBar.cpp" />
     <ClCompile Include="..\..\source\UIToolTip.cpp" />
     <ClCompile Include="..\..\source\UIButton.cpp" />
-    <ClCompile Include="..\..\source\UIFileListPane.cpp" />
     <ClCompile Include="..\..\source\UIListBox.cpp" />
     <ClCompile Include="..\..\source\UIListView.cpp" />
     <ClCompile Include="..\..\source\UITrackBar.cpp" />
@@ -70,7 +69,6 @@
     <ClInclude Include="..\..\include\kxWindows\UIToolBar.h" />
     <ClInclude Include="..\..\include\kxWindows\UIToolTip.h" />
     <ClInclude Include="..\..\include\kxWindows\UIButton.h" />
-    <ClInclude Include="..\..\include\kxWindows\UIFileListPane.h" />
     <ClInclude Include="..\..\include\kxWindows\UIListBox.h" />
     <ClInclude Include="..\..\include\kxWindows\UIListView.h" />
     <ClInclude Include="..\..\include\kxWindows\UITrackBar.h" />
@@ -91,7 +89,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
