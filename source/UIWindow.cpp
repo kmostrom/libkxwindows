@@ -75,7 +75,7 @@ bool UIWindow::SetWindowText(const char* text)
 	mWindowText = new char[strlen(text) + 1];
 	if (mWindowText)
 	{
-		strcpy(mWindowText, text);
+		strcpy_s(mWindowText, _msize(mWindowText), text);
 		::SetWindowText(mWindowHandle, mWindowText);
 	}
 
@@ -102,7 +102,7 @@ bool UIWindow::SetClassName(const char* className)
 	mClassName = new char[strlen(className) + 1];
 	if (mClassName)
 	{
-		strcpy(mClassName, className);
+		strcpy_s(mClassName, _msize(mClassName), className);
 	}
 
 	return mClassName != NULL;

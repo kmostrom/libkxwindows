@@ -84,6 +84,8 @@
     <ProjectGuid>{6299232E-BBDC-487C-BD1E-D4541BEB95E3}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>kxWindows</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>kxwindows</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -114,6 +116,7 @@
     <LibraryPath>$(LibraryPath)</LibraryPath>
     <TargetName>$(ProjectName)_d</TargetName>
     <TargetName>$(ProjectName)_d</TargetName>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
