@@ -260,10 +260,8 @@ RECT UIWindow::GetClientRect() const
 LRESULT CALLBACK UIWindow::stWndProc(HWND windowHandle, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	UIWindow* window = (UIWindow *) GetWindowLongPtr(windowHandle, GWLP_USERDATA);
-	if(window)
-	{
-		return window->WndProc(windowHandle, message, wParam, lParam);
-	}
+	assert(window);
+	return window->WndProc(windowHandle, message, wParam, lParam);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
