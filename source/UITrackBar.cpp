@@ -159,9 +159,15 @@ LRESULT UITrackBar::SetPageSize(long lPageSize)
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+<<<<<<< HEAD
 LRESULT UITrackBar::SetPos(BOOL bPosition, long lPosition)
 {
 	return ::SendMessage(mWindowHandle, TBM_SETPOS, (WPARAM) bPosition, (LPARAM) lPosition);
+=======
+LRESULT UITrackBar::SetPos(long position, BOOL redraw)
+{
+	return ::SendMessage(mWindowHandle, TBM_SETPOS, (WPARAM) redraw, (LPARAM) position);
+>>>>>>> origin/master
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -249,3 +255,60 @@ LRESULT UITrackBar::SetUnicodeFormat(BOOL bUnicode)
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+<<<<<<< HEAD
+=======
+
+void UITrackBar::Create(const char* text, HWND parentWindowHandle, UINT id)
+{
+	mWindowHandle = CreateWindowEx(
+		0,
+		TRACKBAR_CLASS,
+		text,
+		WS_VISIBLE | WS_CHILD,
+		0, 0, 120, 27,
+		parentWindowHandle,
+		(HMENU) id,
+		GetModuleHandle(NULL),
+		NULL);
+
+	mParentWindowHandle = parentWindowHandle;
+
+	PostMessage(mWindowHandle, WM_SETFONT, (WPARAM) GetStockObject(ANSI_VAR_FONT), FALSE);
+
+	SubClass(UIWindow::stWndProc);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+LRESULT CALLBACK UITrackBar::WndProc(HWND windowHandle, UINT message, WPARAM wParam, LPARAM lParam)
+{
+	switch (message)
+	{
+		case WM_LBUTTONDOWN: 
+			// WPARAM = (UITrackBar*) source,
+			// LPARAM = 0 (not used)
+			PostMessage(mParentWindowHandle, EMessage::WM_TRACKBAR_LBUTTONDOWN, (WPARAM) this, (LPARAM) 0);
+			mIsDraggingSlider = true;
+			break;
+
+		case WM_MOUSEMOVE:
+			PostMessage(mParentWindowHandle, EMessage::WM_TRACKBAR_MOUSEMOVE, (WPARAM) this, (LPARAM) 0);
+			if (mIsDraggingSlider)
+			{
+				unsigned int position = GetPos();
+				PostMessage(mParentWindowHandle, EMessage::WM_TRACKBAR_CHANGED, (WPARAM) this, (LPARAM) position);
+			}
+			break;
+
+		case WM_LBUTTONUP:
+			PostMessage(mParentWindowHandle, EMessage::WM_TRACKBAR_LBUTTONUP, (WPARAM) this, (LPARAM) 0);
+			mIsDraggingSlider = false;
+			break;
+
+		default:
+			break;
+	}
+
+	return CallWindowProc(mOldWndProc, windowHandle, message, wParam, lParam);
+}
+>>>>>>> origin/master

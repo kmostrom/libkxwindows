@@ -1,0 +1,48 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#ifndef _ZBITMAP__H_
+#define _ZBITMAP__H_
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include <windows.h>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class ZBitmap
+{
+
+public:
+	ZBitmap(DWORD dwImageID = 0);
+	ZBitmap( const TCHAR *pszFileName );
+	virtual ~ZBitmap(void);
+
+	void	LoadBitmap( DWORD dwBitmapID );
+
+	void	Blit(HDC hDstDC, int iDstX = 0, int iDstY = 0, int iDstWidth = 0, int iDstHeight = 0, int iSrcX = 0, int iSrcY = 0, DWORD dwOp = SRCCOPY) const;
+	void	Blit(HDC hDstDC, LPRECT pDstRect, POINT *pSrcPt = NULL, DWORD dwOp = SRCCOPY ) const;
+
+	void	Destroy(void);
+
+	HDC		GetDC(void) const;
+
+	operator HBITMAP	(void);
+	operator HDC		(void);
+	operator BITMAP&	(void);
+
+	// TODO: operator &
+	// TODO: operator |
+	// TODO: operator ~
+
+protected:
+	HBITMAP _hbmImage;
+	HBITMAP _hbmImageT;
+
+	BITMAP _bm;
+
+	HDC _hdcSrc;			// Device context for Image
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#endif
