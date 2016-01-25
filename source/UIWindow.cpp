@@ -4,11 +4,8 @@
 #include <kxWindows/Rect.h>
 
 #include <cassert>
-<<<<<<< HEAD
-=======
 #include <cstdarg>
 #include <cstdio>
->>>>>>> origin/master
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -78,11 +75,7 @@ bool UIWindow::SetWindowText(const char* text)
 	mWindowText = new char[strlen(text) + 1];
 	if (mWindowText)
 	{
-<<<<<<< HEAD
-		strcpy(mWindowText, text);
-=======
 		strcpy_s(mWindowText, _msize(mWindowText), text);
->>>>>>> origin/master
 		::SetWindowText(mWindowHandle, mWindowText);
 	}
 
@@ -109,11 +102,7 @@ bool UIWindow::SetClassName(const char* className)
 	mClassName = new char[strlen(className) + 1];
 	if (mClassName)
 	{
-<<<<<<< HEAD
-		strcpy(mClassName, className);
-=======
 		strcpy_s(mClassName, _msize(mClassName), className);
->>>>>>> origin/master
 	}
 
 	return mClassName != NULL;
@@ -271,15 +260,8 @@ RECT UIWindow::GetClientRect() const
 LRESULT CALLBACK UIWindow::stWndProc(HWND windowHandle, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	UIWindow* window = (UIWindow *) GetWindowLongPtr(windowHandle, GWLP_USERDATA);
-<<<<<<< HEAD
-	if(window)
-	{
-		return window->WndProc(windowHandle, message, wParam, lParam);
-	}
-=======
 	assert(window);
 	return window->WndProc(windowHandle, message, wParam, lParam);
->>>>>>> origin/master
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -306,8 +288,6 @@ LRESULT CALLBACK UIWindow::WndProc(HWND windowHandle, UINT message, WPARAM wPara
 };
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-<<<<<<< HEAD
-=======
 
 int UIWindow::SetText(const char* format, ...)
 {
@@ -322,4 +302,3 @@ int UIWindow::SetText(const char* format, ...)
 
 	return ret;
 }
->>>>>>> origin/master

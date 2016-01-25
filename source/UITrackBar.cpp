@@ -159,15 +159,9 @@ LRESULT UITrackBar::SetPageSize(long lPageSize)
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-<<<<<<< HEAD
-LRESULT UITrackBar::SetPos(BOOL bPosition, long lPosition)
-{
-	return ::SendMessage(mWindowHandle, TBM_SETPOS, (WPARAM) bPosition, (LPARAM) lPosition);
-=======
 LRESULT UITrackBar::SetPos(long position, BOOL redraw)
 {
 	return ::SendMessage(mWindowHandle, TBM_SETPOS, (WPARAM) redraw, (LPARAM) position);
->>>>>>> origin/master
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -255,8 +249,6 @@ LRESULT UITrackBar::SetUnicodeFormat(BOOL bUnicode)
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-<<<<<<< HEAD
-=======
 
 void UITrackBar::Create(const char* text, HWND parentWindowHandle, UINT id)
 {
@@ -311,4 +303,3 @@ LRESULT CALLBACK UITrackBar::WndProc(HWND windowHandle, UINT message, WPARAM wPa
 
 	return CallWindowProc(mOldWndProc, windowHandle, message, wParam, lParam);
 }
->>>>>>> origin/master

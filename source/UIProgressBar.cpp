@@ -81,8 +81,6 @@ LRESULT UIProgressBar::StepIt(void)
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-<<<<<<< HEAD
-=======
 
 void UIProgressBar::Create(const char* text, HWND parentWindowHandle, UINT id)
 {
@@ -101,4 +99,3 @@ void UIProgressBar::Create(const char* text, HWND parentWindowHandle, UINT id)
 }
 
 ////////////////////////////////////////////////////////////////////////////////
->>>>>>> origin/master

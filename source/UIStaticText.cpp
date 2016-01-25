@@ -4,8 +4,6 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-<<<<<<< HEAD
-=======
 HWND UIStaticText::Create(const char* text, HWND parentWindowHandle, UINT id)
 {
 	mWindowHandle = CreateWindowEx(
@@ -23,4 +21,3 @@ HWND UIStaticText::Create(const char* text, HWND parentWindowHandle, UINT id)
 
 	return mWindowHandle;
 }
->>>>>>> origin/master
