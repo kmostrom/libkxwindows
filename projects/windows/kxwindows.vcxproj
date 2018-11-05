@@ -25,6 +25,7 @@
     <ClCompile Include="..\..\source\UICoolBar.cpp" />
     <ClCompile Include="..\..\source\UIDateTimePicker.cpp" />
     <ClCompile Include="..\..\source\UIEdit.cpp" />
+    <ClCompile Include="..\..\source\UIFileListPane.cpp" />
     <ClCompile Include="..\..\source\UIHeader.cpp" />
     <ClCompile Include="..\..\source\UIHotKey.cpp" />
     <ClCompile Include="..\..\source\UIIPAddress.cpp" />
@@ -59,6 +60,7 @@
     <ClInclude Include="..\..\include\kxWindows\UICoolBar.h" />
     <ClInclude Include="..\..\include\kxWindows\UIDateTimePicker.h" />
     <ClInclude Include="..\..\include\kxWindows\UIEdit.h" />
+    <ClInclude Include="..\..\include\kxWindows\UIFileListPane.h" />
     <ClInclude Include="..\..\include\kxWindows\UIHeader.h" />
     <ClInclude Include="..\..\include\kxWindows\UIHotKey.h" />
     <ClInclude Include="..\..\include\kxWindows\UIIPAddress.h" />
@@ -92,14 +94,14 @@
     <ProjectGuid>{6299232E-BBDC-487C-BD1E-D4541BEB95E3}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>kxWindows</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
     <ProjectName>kxwindows</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -143,8 +145,8 @@
     <LibraryPath>$(LibraryPath)</LibraryPath>
     <TargetName>$(ProjectName)_d</TargetName>
     <TargetName>$(ProjectName)_d</TargetName>
-    <OutDir>..\..\build\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>..\..\build\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>../../include;../../../core/packages/filesystem/src/common/include;../../../core/packages/filesystem/src/windows/include;$(IncludePath)</IncludePath>

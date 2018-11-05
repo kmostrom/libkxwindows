@@ -96,6 +96,9 @@
     <ClCompile Include="..\..\source\UIReBar.cpp">
       <Filter>UIExtendedComponents</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\source\UIFileListPane.cpp">
+      <Filter>UIExtendedComponents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\kxWindows\Input.h" />
@@ -189,6 +192,9 @@
       <Filter>UIExtendedComponents</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\kxWindows\UIReBar.h">
+      <Filter>UIExtendedComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\kxWindows\UIFileListPane.h">
       <Filter>UIExtendedComponents</Filter>
     </ClInclude>
   </ItemGroup>
