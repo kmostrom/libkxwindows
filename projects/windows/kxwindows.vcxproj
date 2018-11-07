@@ -141,7 +141,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>../../include;../../../core/packages/filesystem/src/common/include;../../../core/packages/filesystem/src/windows/include;$(IncludePath)</IncludePath>
+    <IncludePath>../../include;../../../filesystem/src/common/include;../../../filesystem/src/windows/include;$(IncludePath)</IncludePath>
     <LibraryPath>$(LibraryPath)</LibraryPath>
     <TargetName>$(ProjectName)_d</TargetName>
     <TargetName>$(ProjectName)_d</TargetName>
